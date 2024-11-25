@@ -1,5 +1,5 @@
 {% set name = "topiary" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,11 @@ package:
 
 source:
   url: https://github.com/tweag/topiary/archive/v{{ version }}.tar.gz
-  sha256: 21c5bdda2d51e5716763e30cbb3e0da613752c15ce7835bdc192481f7d2bf3ee
+  sha256: 7c84c7f1c473609153895c8857a35925e2c0d623e60f3ee00255202c2461785a
 
 build:
   number: 0
+  skip: True  # [win]
 
 requirements:
   build:
