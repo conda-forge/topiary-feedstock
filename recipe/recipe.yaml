@@ -1,37 +1,37 @@
-{% set name = "topiary" %}
-{% set version = "0.5.1" %}
+context:
+  version: 0.5.1
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: topiary
+  version: ${{ version }}
 
 source:
-  url: https://github.com/tweag/topiary/archive/v{{ version }}.tar.gz
+  url: https://github.com/tweag/topiary/archive/v${{ version }}.tar.gz
   sha256: 7c84c7f1c473609153895c8857a35925e2c0d623e60f3ee00255202c2461785a
 
 build:
   number: 0
-  skip: True  # [win]
+  skip: win
 
 requirements:
   build:
-    - {{ compiler('rust') }}
-    - {{ compiler('c') }}
-    - {{ stdlib('c') }}
+    - ${{ compiler('rust') }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
     - cargo-bundle-licenses
 
-test:
-  commands:
-    - topiary --help
+tests:
+  - script:
+      - topiary --help
 
 about:
-  home: https://github.com/tweag/topiary
   license: MIT
   license_file:
     - LICENSE
     - THIRDPARTY.yml
   summary: Topiary is a tool in the Tree-sitter ecosystem, designed for formatter authors and formatter users.
-  dev_url: https://github.com/tweag/topiary
+  homepage: https://github.com/tweag/topiary
+  repository: https://github.com/tweag/topiary
 
 extra:
   recipe-maintainers:
