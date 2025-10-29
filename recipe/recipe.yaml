@@ -1,5 +1,5 @@
 context:
-  version: "0.6.1"
+  version: "0.7.0"
 
 package:
   name: topiary
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/tweag/topiary/archive/v${{ version }}.tar.gz
-  sha256: e2bbac9cb46a3743cc41ca55245026580308722242c9df84bc0ef3cbb989aa81
+  sha256: 88f90418b9a87f8b80d914f8cae00b173b5db9961ac9bcda4c063d6ed4b76aa8
 
 build:
   number: 0
